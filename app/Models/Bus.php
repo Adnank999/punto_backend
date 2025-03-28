@@ -17,11 +17,6 @@ class Bus extends Model
     }
 
 
-    public function busStopSchedules()
-    {
-        return $this->hasMany(BusStopSchedule::class);
-    }
-
     public function statuses()
     {
         return $this->hasMany(BusStatus::class);

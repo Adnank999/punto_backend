@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('gps_device_id')->unique(); 
             $table->foreignId('route_id')->constrained()->onDelete('cascade'); 
-            $table->float('current_latitude');
-            $table->float('current_longitude');
             $table->boolean('active')->default(true); 
             $table->timestamps();
         });

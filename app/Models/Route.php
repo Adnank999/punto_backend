@@ -16,21 +16,10 @@ class Route extends Model
         return $this->hasMany(Bus::class);
     }
 
-    public function busStopSchedules()
-    {
-        return $this->hasMany(BusStopSchedule::class);
-    }
-
-    // public function busStops()
-    // {
-    //     return $this->belongsToMany(BusStop::class, 'bus_stop_schedules', 'route_id', 'bus_stop_id');
-    // }
-
-
     public function busStops()
     {
         return $this->belongsToMany(BusStop::class, 'route_stops')
-            ->withPivot('predefined_time', 'route_order')
+            ->withPivot('route_order')
             ->withTimestamps();
     }
 

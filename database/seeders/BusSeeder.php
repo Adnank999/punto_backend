@@ -21,8 +21,6 @@ class BusSeeder extends Seeder
             Bus::create([
                 'gps_device_id' => $faker->uuid,
                 'route_id' => $routes->random()->id,
-                'current_latitude' => $faker->latitude(40.4774, 40.9176), 
-                'current_longitude' => $faker->longitude(-74.2591, -73.7004), 
                 'active' => $faker->boolean,
             ]);
         }

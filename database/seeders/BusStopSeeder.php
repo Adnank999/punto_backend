@@ -16,12 +16,30 @@ class BusStopSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 100; $i++) {
+       
+        $directions = $this->generateDirections(20);
+
+        for ($i = 0; $i < 20; $i++) {
             BusStop::create([
                 'name' => $faker->streetName,
                 'latitude' => $faker->latitude(40.4774, 40.9176),
-                'longitude' => $faker->longitude(-74.2591, -73.7004), 
+                'longitude' => $faker->longitude(-74.2591, -73.7004),
+                'predefined_time' => rand(100, 200),  
+                'predefined_radius' => 100,
+                'predefined_direction' => $directions[$i],  
             ]);
         }
+    }
+
+    private function generateDirections(int $count): array
+    {
+        $directions = [];
+
+        // Generate random directions for each bus stop (random values between 0 and 360)
+        for ($i = 0; $i < $count; $i++) {
+            $directions[] = rand(0, 360);
+        }
+
+        return $directions;
     }
 }

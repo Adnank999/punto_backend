@@ -50,7 +50,7 @@ Route::post('/check-bus-departure', [CalculationController::class, 'checkIfBusDe
 
 
 
-/* Testing */
+/* most important calculation Testing */
 
 Route::post('bus-stops/{busStopId}', [CalculationController::class, 'getBusStopDetails']);
 

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\RouteStopBusStop;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,9 +18,10 @@ class DatabaseSeeder extends Seeder
             BusStopSeeder::class,
             RouteSeeder::class,
             BusSeeder::class,
-            BusStopScheduleSeeder::class,
+            // BusStopScheduleSeeder::class,
             BusStatusSeeder::class,
-            RouteStopSeeder::class
+            RouteStopSeeder::class,
+           
             
         ]);
     }

@@ -11,12 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Schema::create('route_stops', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('bus_stop_id')->constrained('bus_stops')->onDelete('cascade');
+        //     $table->foreignId('route_id')->constrained('routes')->onDelete('cascade');
+        //     $table->integer('predefined_time'); 
+        //     $table->integer('predefined_direction'); 
+        //     $table->integer('route_order');
+        //     $table->boolean('recent_bus_stop_match')->default(false);
+        //     $table->timestamps();
+        // });
+
         Schema::create('route_stops', function (Blueprint $table) {
             $table->id();
             $table->foreignId('bus_stop_id')->constrained('bus_stops')->onDelete('cascade');
             $table->foreignId('route_id')->constrained('routes')->onDelete('cascade');
-            $table->integer('predefined_time'); 
-            $table->integer('route_order');
+            $table->integer('route_order')->default(0);
             $table->boolean('recent_bus_stop_match')->default(false);
             $table->timestamps();
         });
